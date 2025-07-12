@@ -1,0 +1,111 @@
+{
+  "roles": [
+    {
+      "id": "1",
+      "name": "worker",
+      "description": "Pet care center worker"
+    },
+    {
+      "id": "2",
+      "name": "customer",
+      "description": "Pet owner customer"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "nombre": "John Smith",
+      "identidad": "12345678",
+      "telefono": "555-0123",
+      "direccion": "123 Main St",
+      "email": "john@petcare.com",
+      "contrasena": "worker123",
+      "rolId": 1
+    },
+    {
+      "id": "2",
+      "nombre": "Maria Garcia",
+      "identidad": "87654321",
+      "telefono": "555-0456",
+      "direccion": "456 Oak Ave",
+      "email": "maria@email.com",
+      "contrasena": "customer123",
+      "rolId": 2
+    },
+    {
+      "id": "b980",
+      "nombre": "sebastian linero de castro",
+      "identidad": "1193266466",
+      "telefono": "3044598748",
+      "direccion": "cra 56 calle 31",
+      "email": "sebastianlinero15@gmail.com",
+      "contrasena": "sebas2020",
+      "rolId": 2
+    },
+    {
+      "id": "63d2",
+      "nombre": "brandon",
+      "identidad": "123456789",
+      "telefono": "2222222",
+      "direccion": "655646",
+      "email": "brandon25@gmail.com",
+      "contrasena": "brandon123",
+      "rolId": 2
+    }
+  ],
+  "pets": [
+    {
+      "id": "1",
+      "nombre": "Buddy",
+      "peso": 28,
+      "edad": 3,
+      "raza": "Golden Retriever",
+      "anotaciones": "Friendly and energetic",
+      "temperamento": "Calm",
+      "userId": "2"
+    },
+    {
+      "id": "0a81",
+      "nombre": "paco",
+      "peso": 20,
+      "edad": 2,
+      "raza": "pitbull",
+      "anotaciones": "loco",
+      "temperamento": "Calm",
+      "userId": "63d2"
+    },
+    {
+      "id": "cb8b",
+      "nombre": "lulu",
+      "peso": 10,
+      "edad": 2,
+      "raza": "callejera",
+      "anotaciones": "",
+      "temperamento": "Calm",
+      "userId": "2"
+    }
+  ],
+  "stays": [
+    {
+      "id": "1",
+      "ingreso": "2025-07-10",
+      "salida": "2025-07-15",
+      "petId": 1,
+      "serviciosAdicionales": [
+        "Bath",
+        "Grooming"
+      ],
+      "valorDia": 40000,
+      "completada": true
+    },
+    {
+      "id": "25cb",
+      "petId": 0,
+      "ingreso": "2025-07-08",
+      "salida": "2025-07-11",
+      "valorDia": 35000,
+      "serviciosAdicionales": [],
+      "completada": false
+    }
+  ]
+}
