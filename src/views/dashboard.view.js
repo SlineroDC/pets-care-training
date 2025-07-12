@@ -13,22 +13,22 @@ export class DashboardView {
     render() {
         if (!this.currentUser) {
             return `
-                <div class="view-container">
+                <section class="view-container">
                     <div class="card">
                         <h2>Access Denied</h2>
                         <p>Please login to access the dashboard</p>
                         <button class="btn btn-primary" data-navigate="/login">Login</button>
                     </div>
-                </div>
+                </section>
             `;
         }
 
         const headerHtml = `
-            <div class="dashboard-header">
+            <header class="dashboard-header">
                 <h1>Welcome, ${this.currentUser.nombre}</h1>
                 <p>Role: ${this.currentUser.role}</p>
                 <button class="btn btn-secondary" id="logout-btn">Logout</button>
-            </div>
+            </header>
         `;
 
         if (this.currentUser.role === 'customer') {
@@ -50,145 +50,147 @@ export class DashboardView {
 
     renderCustomerDashboard() {
         return `
-            <div class="dashboard-content">
-                <div class="dashboard-actions">
-                    <button class="btn btn-primary" id="add-pet-btn">Add New Pet</button>
-                    <button class="btn btn-secondary" id="edit-profile-btn">Edit Profile</button>
-                </div>
-                
-                <div class="dashboard-section">
-                    <h2>My Pets</h2>
-                    <div id="pets-list">
-                        <div class="loading">Loading pets...</div>
-                    </div>
-                </div>
-            </div>
+            <section class="dashboard-content">
+  <section class="dashboard-actions">
+    <button class="btn btn-primary" id="add-pet-btn">Add New Pet</button>
+    <button class="btn btn-secondary" id="edit-profile-btn">Edit Profile</button>
+  </section>
 
-            <!-- Add Pet Modal -->
-            <div id="add-pet-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>Add New Pet</h3>
-                    <form id="add-pet-form">
-                        <input type="text" id="pet-name" placeholder="Pet Name" required>
-                        <input type="number" id="pet-weight" placeholder="Weight (kg)" step="0.1" required>
-                        <input type="number" id="pet-age" placeholder="Age" required>
-                        <input type="text" id="pet-breed" placeholder="Breed" required>
-                        <textarea id="pet-notes" placeholder="Notes (optional)"></textarea>
-                        <select id="pet-temperament" required>
-                            <option value="">Select Temperament</option>
-                            <option value="Calm">Calm</option>
-                            <option value="Active">Active</option>
-                            <option value="Aggressive">Aggressive</option>
-                            <option value="Shy">Shy</option>
-                            <option value="Friendly">Friendly</option>
-                        </select>
-                        <button type="submit" class="btn btn-primary">Add Pet</button>
-                    </form>
-                </div>
-            </div>
+  <section class="dashboard-section">
+    <h2>My Pets</h2>
+    <article id="pets-list">
+      <div class="loading">Loading pets...</div>
+    </article>
+  </section>
+</section>
 
-            <!-- Edit Pet Modal -->
-            <div id="edit-pet-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>Edit Pet</h3>
-                    <form id="edit-pet-form">
-                        <input type="hidden" id="edit-pet-id">
-                        <input type="text" id="edit-pet-name" placeholder="Pet Name" required>
-                        <input type="number" id="edit-pet-weight" placeholder="Weight (kg)" step="0.1" required>
-                        <input type="number" id="edit-pet-age" placeholder="Age" required>
-                        <input type="text" id="edit-pet-breed" placeholder="Breed" required>
-                        <textarea id="edit-pet-notes" placeholder="Notes (optional)"></textarea>
-                        <select id="edit-pet-temperament" required>
-                            <option value="Calm">Calm</option>
-                            <option value="Active">Active</option>
-                            <option value="Aggressive">Aggressive</option>
-                            <option value="Shy">Shy</option>
-                            <option value="Friendly">Friendly</option>
-                        </select>
-                        <button type="submit" class="btn btn-primary">Update Pet</button>
-                    </form>
-                </div>
-            </div>
+<!-- Add Pet Modal -->
+<aside id="add-pet-modal" class="modal">
+  <section class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Add New Pet</h3>
+    <form id="add-pet-form">
+      <input type="text" id="pet-name" placeholder="Pet Name" required>
+      <input type="number" id="pet-weight" placeholder="Weight (kg)" step="0.1" required>
+      <input type="number" id="pet-age" placeholder="Age" required>
+      <input type="text" id="pet-breed" placeholder="Breed" required>
+      <textarea id="pet-notes" placeholder="Notes (optional)"></textarea>
+      <select id="pet-temperament" required>
+        <option value="">Select Temperament</option>
+        <option value="Calm">Calm</option>
+        <option value="Active">Active</option>
+        <option value="Aggressive">Aggressive</option>
+        <option value="Shy">Shy</option>
+        <option value="Friendly">Friendly</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Add Pet</button>
+    </form>
+  </section>
+</aside>
 
-            <!-- Edit Profile Modal -->
-            <div id="edit-profile-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>Edit Profile</h3>
-                    <form id="edit-profile-form">
-                        <input type="text" id="profile-nombre" placeholder="Full Name" required>
-                        <input type="text" id="profile-identidad" placeholder="Identity Document" required>
-                        <input type="tel" id="profile-telefono" placeholder="Phone Number" required>
-                        <input type="text" id="profile-direccion" placeholder="Address" required>
-                        <input type="email" id="profile-email" placeholder="Email" required>
-                        <input type="password" id="profile-contrasena" placeholder="New Password (leave empty to keep current)">
-                        <button type="submit" class="btn btn-primary">Update Profile</button>
-                    </form>
-                </div>
-            </div>
+<!-- Edit Pet Modal -->
+<aside id="edit-pet-modal" class="modal">
+  <section class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Edit Pet</h3>
+    <form id="edit-pet-form">
+      <input type="hidden" id="edit-pet-id">
+      <input type="text" id="edit-pet-name" placeholder="Pet Name" required>
+      <input type="number" id="edit-pet-weight" placeholder="Weight (kg)" step="0.1" required>
+      <input type="number" id="edit-pet-age" placeholder="Age" required>
+      <input type="text" id="edit-pet-breed" placeholder="Breed" required>
+      <textarea id="edit-pet-notes" placeholder="Notes (optional)"></textarea>
+      <select id="edit-pet-temperament" required>
+        <option value="Calm">Calm</option>
+        <option value="Active">Active</option>
+        <option value="Aggressive">Aggressive</option>
+        <option value="Shy">Shy</option>
+        <option value="Friendly">Friendly</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Update Pet</button>
+    </form>
+  </section>
+</aside>
+
+<!-- Edit Profile Modal -->
+<aside id="edit-profile-modal" class="modal">
+  <section class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Edit Profile</h3>
+    <form id="edit-profile-form">
+      <input type="text" id="profile-nombre" placeholder="Full Name" required>
+      <input type="text" id="profile-identidad" placeholder="Identity Document" required>
+      <input type="tel" id="profile-telefono" placeholder="Phone Number" required>
+      <input type="text" id="profile-direccion" placeholder="Address" required>
+      <input type="email" id="profile-email" placeholder="Email" required>
+      <input type="password" id="profile-contrasena" placeholder="New Password (leave empty to keep current)">
+      <button type="submit" class="btn btn-primary">Update Profile</button>
+    </form>
+  </section>
+</aside>
+
         `;
     }
 
     renderWorkerDashboard() {
         return `
-            <div class="dashboard-content">
-                <div class="dashboard-tabs">
-                    <button class="tab-btn active" data-tab="pets">All Pets</button>
-                    <button class="tab-btn" data-tab="stays">Stays</button>
-                    <button class="tab-btn" data-tab="users">Users</button>
-                </div>
+            <section class="dashboard-content">
+  <nav class="dashboard-tabs">
+    <button class="tab-btn active" data-tab="pets">All Pets</button>
+    <button class="tab-btn" data-tab="stays">Stays</button>
+    <button class="tab-btn" data-tab="users">Users</button>
+  </nav>
 
-                <div id="pets-tab" class="tab-content active">
-                    <h2>All Pets</h2>
-                    <div id="all-pets-list">
-                        <div class="loading">Loading pets...</div>
-                    </div>
-                </div>
+  <section id="pets-tab" class="tab-content active">
+    <h2>All Pets</h2>
+    <article id="all-pets-list">
+      <div class="loading">Loading pets...</div>
+    </article>
+  </section>
 
-                <div id="stays-tab" class="tab-content">
-                    <h2>Pet Stays</h2>
-                    <button class="btn btn-primary" id="add-stay-btn">Create New Stay</button>
-                    <div id="stays-list">
-                        <div class="loading">Loading stays...</div>
-                    </div>
-                </div>
+  <section id="stays-tab" class="tab-content">
+    <h2>Pet Stays</h2>
+    <button class="btn btn-primary" id="add-stay-btn">Create New Stay</button>
+    <article id="stays-list">
+      <div class="loading">Loading stays...</div>
+    </article>
+  </section>
 
-                <div id="users-tab" class="tab-content">
-                    <h2>All Users</h2>
-                    <div id="users-list">
-                        <div class="loading">Loading users...</div>
-                    </div>
-                </div>
-            </div>
+  <section id="users-tab" class="tab-content">
+    <h2>All Users</h2>
+    <article id="users-list">
+      <div class="loading">Loading users...</div>
+    </article>
+  </section>
+</section>
 
-            <!-- Add Stay Modal -->
-            <div id="add-stay-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>Create New Stay</h3>
-                    <form id="add-stay-form">
-                        <select id="stay-pet" required>
-                            <option value="">Select Pet</option>
-                        </select>
-                        <input type="date" id="stay-checkin" required>
-                        <input type="date" id="stay-checkout" required>
-                        <input type="number" id="stay-daily-rate" placeholder="Daily Rate" required>
-                        <div class="services-section">
-                            <h4>Additional Services</h4>
-                            <label><input type="checkbox" value="Bath"> Bath</label>
-                            <label><input type="checkbox" value="Grooming"> Grooming</label>
-                            <label><input type="checkbox" value="Training"> Training</label>
-                            <label><input type="checkbox" value="Veterinary"> Veterinary</label>
-                        </div>
-                        <div id="stay-total-preview">
-                            <strong>Total Cost: $0</strong>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Create Stay</button>
-                    </form>
-                </div>
-            </div>
+<!-- Add Stay Modal -->
+<aside id="add-stay-modal" class="modal">
+  <section class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Create New Stay</h3>
+    <form id="add-stay-form">
+      <select id="stay-pet" required>
+        <option value="">Select Pet</option>
+      </select>
+      <input type="date" id="stay-checkin" required>
+      <input type="date" id="stay-checkout" required>
+      <input type="number" id="stay-daily-rate" placeholder="Daily Rate" required>
+      <section class="services-section">
+        <h4>Additional Services</h4>
+        <label><input type="checkbox" value="Bath"> Bath</label>
+        <label><input type="checkbox" value="Grooming"> Grooming</label>
+        <label><input type="checkbox" value="Training"> Training</label>
+        <label><input type="checkbox" value="Veterinary"> Veterinary</label>
+      </section>
+      <section id="stay-total-preview">
+        <strong>Total Cost: $0</strong>
+      </section>
+      <button type="submit" class="btn btn-primary">Create Stay</button>
+    </form>
+  </section>
+</aside>
+
         `;
     }
 
@@ -204,7 +206,7 @@ export class DashboardView {
         document.getElementById('logout-btn')?.addEventListener('click', () => {
             this.authService.logout();
             window.router.href('/');
-          
+
         });
 
         if (this.currentUser.role === 'customer') {
@@ -328,7 +330,7 @@ export class DashboardView {
         try {
             const pets = await this.apiService.get('/pets');
             const users = await this.apiService.get('/users');
-            
+
             // Add owner information to pets
             const petsWithOwners = pets.map(pet => ({
                 ...pet,
@@ -345,7 +347,7 @@ export class DashboardView {
         try {
             const stays = await this.apiService.get('/stays');
             const pets = await this.apiService.get('/pets');
-            
+
             const staysWithPets = stays.map(stay => ({
                 ...stay,
                 pet: pets.find(pet => pet.id == stay.petId)
@@ -361,7 +363,7 @@ export class DashboardView {
         try {
             const users = await this.apiService.get('/users');
             const roles = await this.apiService.get('/roles');
-            
+
             const usersWithRoles = users.map(user => ({
                 ...user,
                 roleName: roles.find(role => role.id == user.rolId)?.name
@@ -470,11 +472,11 @@ export class DashboardView {
             };
 
             await this.apiService.post('/pets', petData);
-            
+
             Swal.fire('Success!', 'Pet added successfully', 'success');
             document.getElementById('add-pet-modal').style.display = 'none';
             document.getElementById('add-pet-form').reset();
-            
+
             // Reload pets list to show the new pet with edit/delete buttons
             await this.loadCustomerPets();
         } catch (error) {
@@ -490,7 +492,7 @@ export class DashboardView {
         document.getElementById('profile-direccion').value = this.currentUser.direccion;
         document.getElementById('profile-email').value = this.currentUser.email;
         document.getElementById('profile-contrasena').value = ''; // Keep empty for security
-        
+
         document.getElementById('edit-profile-modal').style.display = 'block';
     }
 
@@ -515,8 +517,8 @@ export class DashboardView {
 
             // Check if email or identity already exists (excluding current user)
             const users = await this.apiService.get('/users');
-            const existingUser = users.find(u => 
-                u.id != this.currentUser.id && 
+            const existingUser = users.find(u =>
+                u.id != this.currentUser.id &&
                 (u.email === profileData.email || u.identidad === profileData.identidad)
             );
 
@@ -525,12 +527,12 @@ export class DashboardView {
             }
 
             await this.apiService.patch(`/users/${this.currentUser.id}`, profileData);
-            
+
             // Update current user in localStorage
             const updatedUser = { ...this.currentUser, ...profileData };
             localStorage.setItem('currentUser', JSON.stringify(updatedUser));
             this.currentUser = updatedUser;
-            
+
             // Update the header with new name
             const headerElement = document.querySelector('.dashboard-header h1');
             if (headerElement) {
@@ -539,7 +541,7 @@ export class DashboardView {
 
             Swal.fire('Success!', 'Profile updated successfully', 'success');
             document.getElementById('edit-profile-modal').style.display = 'none';
-            
+
         } catch (error) {
             Swal.fire('Error!', error.message || 'Failed to update profile', 'error');
         }
@@ -548,7 +550,7 @@ export class DashboardView {
     async editPet(petId) {
         try {
             const pet = await this.apiService.get(`/pets/${petId}`);
-            
+
             // Fill the edit form
             document.getElementById('edit-pet-id').value = pet.id;
             document.getElementById('edit-pet-name').value = pet.nombre;
@@ -557,7 +559,7 @@ export class DashboardView {
             document.getElementById('edit-pet-breed').value = pet.raza;
             document.getElementById('edit-pet-notes').value = pet.anotaciones || '';
             document.getElementById('edit-pet-temperament').value = pet.temperamento;
-            
+
             document.getElementById('edit-pet-modal').style.display = 'block';
         } catch (error) {
             Swal.fire('Error!', 'Failed to load pet data', 'error');
@@ -578,10 +580,10 @@ export class DashboardView {
             };
 
             await this.apiService.patch(`/pets/${petId}`, petData);
-            
+
             Swal.fire('Success!', 'Pet updated successfully', 'success');
             document.getElementById('edit-pet-modal').style.display = 'none';
-            
+
             await this.loadCustomerPets();
         } catch (error) {
             Swal.fire('Error!', 'Failed to update pet', 'error');
@@ -621,12 +623,12 @@ export class DashboardView {
         try {
             const pets = await this.apiService.get('/pets');
             const petSelect = document.getElementById('stay-pet');
-            
+
             petSelect.innerHTML = '<option value="">Select Pet</option>';
             pets.forEach(pet => {
                 petSelect.innerHTML += `<option value="${pet.id}">${pet.nombre}</option>`;
             });
-            
+
             document.getElementById('add-stay-modal').style.display = 'block';
         } catch (error) {
             Swal.fire('Error!', 'Failed to load pets', 'error');
@@ -637,7 +639,7 @@ export class DashboardView {
         const checkin = document.getElementById('stay-checkin').value;
         const checkout = document.getElementById('stay-checkout').value;
         const dailyRate = parseFloat(document.getElementById('stay-daily-rate').value) || 0;
-        
+
         if (checkin && checkout && dailyRate) {
             const total = this.calculateStayCost(checkin, checkout, dailyRate);
             document.getElementById('stay-total-preview').innerHTML = `<strong>Total Cost: $${total.toLocaleString()}</strong>`;
@@ -658,11 +660,11 @@ export class DashboardView {
             const checkin = document.getElementById('stay-checkin').value;
             const checkout = document.getElementById('stay-checkout').value;
             const dailyRate = parseFloat(document.getElementById('stay-daily-rate').value);
-            
+
             // Get additional services
             const serviceCheckboxes = document.querySelectorAll('#add-stay-form input[type="checkbox"]:checked');
             const additionalServices = Array.from(serviceCheckboxes).map(cb => cb.value);
-            
+
             const stayData = {
                 petId: parseInt(petId),
                 ingreso: checkin,
@@ -673,11 +675,11 @@ export class DashboardView {
             };
 
             await this.apiService.post('/stays', stayData);
-            
+
             Swal.fire('Success!', 'Stay created successfully', 'success');
             document.getElementById('add-stay-modal').style.display = 'none';
             document.getElementById('add-stay-form').reset();
-            
+
             await this.loadStays();
         } catch (error) {
             Swal.fire('Error!', 'Failed to create stay', 'error');

@@ -25,9 +25,9 @@
     {
       "id": "2",
       "nombre": "Maria Garcia",
-      "identidad": "87654321",
-      "telefono": "555-0456",
-      "direccion": "456 Oak Ave",
+      "identidad": "123456789932",
+      "telefono": "3003001010",
+      "direccion": "puerto colombia",
       "email": "maria@email.com",
       "contrasena": "customer123",
       "rolId": 2
@@ -51,6 +51,16 @@
       "email": "brandon25@gmail.com",
       "contrasena": "brandon123",
       "rolId": 2
+    },
+    {
+      "id": "8c10",
+      "nombre": "jair miguel linero de castro",
+      "identidad": "114316990",
+      "telefono": "3001232031",
+      "direccion": "39041i093",
+      "email": "jairmiguel15@gmail.com",
+      "contrasena": "jair12345",
+      "rolId": 2
     }
   ],
   "pets": [
@@ -58,7 +68,7 @@
       "id": "1",
       "nombre": "Buddy",
       "peso": 28,
-      "edad": 3,
+      "edad": 4,
       "raza": "Golden Retriever",
       "anotaciones": "Friendly and energetic",
       "temperamento": "Calm",
@@ -83,6 +93,16 @@
       "anotaciones": "",
       "temperamento": "Calm",
       "userId": "2"
+    },
+    {
+      "id": "0f41",
+      "nombre": "otion",
+      "peso": 20,
+      "edad": 2,
+      "raza": "husky",
+      "anotaciones": "",
+      "temperamento": "Active",
+      "userId": "8c10"
     }
   ],
   "stays": [
@@ -103,6 +123,15 @@
       "petId": 0,
       "ingreso": "2025-07-08",
       "salida": "2025-07-11",
+      "valorDia": 35000,
+      "serviciosAdicionales": [],
+      "completada": false
+    },
+    {
+      "id": "f8f6",
+      "petId": null,
+      "ingreso": "2025-07-01",
+      "salida": "2025-07-04",
       "valorDia": 35000,
       "serviciosAdicionales": [],
       "completada": false

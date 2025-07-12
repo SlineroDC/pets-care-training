@@ -7,18 +7,19 @@
   text-align: center;
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
-
+/* ===== VARIABLES CSS ===== */
 .card h2 {
   color: var(--text-primary);
   margin-bottom: var(--spacing-md);
-  font-size: var(--font-size/* ===== VARIABLES CSS ===== */
+  font-size: var(--font-size);}
+
 :root {
   /* Colores principales */
   --primary-gradient: linear-gradient(135deg, #5a74e9 0%, #7930c2 100%);
   --primary-color: #667eea;
   --secondary-color: #7930c2;
   --accent-color: #5a74e9;
-  
+
   /* Colores de fondo */
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
